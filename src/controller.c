@@ -220,21 +220,7 @@ void* asignarNoVacAleatorio(void* elemento)
 		auxVacunado = (eVacunado*)elemento;
 		vacunado_getVac1(auxVacunado, &dosis1);
 		vacunado_getVac2(auxVacunado, &dosis2);
-		if(dosis1>dosis2)
-		{
-			noVacunados= ((rand() % (dosis1 - dosis2 + 1)));
-		}
-		else
-		{
-			if(dosis2>dosis1)
-			{
-				noVacunados= ((rand() % (dosis2 - dosis1 + 1)));
-			}
-			else
-			{
-				noVacunados = 100-(dosis1+dosis2);
-			}
-		}
+		noVacunados = 100 - (dosis1 + dosis2);
 		vacunado_setSinVacunar(auxVacunado, noVacunados);
 	}
 
